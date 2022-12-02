@@ -31,4 +31,10 @@ public class Greenwood_CafeServiceImpl implements Greenwood_CafeService {
     public List<Greenwood_Cafe> findAll() {
         return greenwood_cafeRespository.findAll();
     }
+
+    @Override
+    public Greenwood_Cafe findById(Integer id) {
+        greenwood_cafeRespository.findById(id);
+        return null;// 不知道如何return資料
+    }
 }

@@ -26,6 +26,14 @@ public class Greedwood_CafeController {
 
     @PostMapping("/update")// 更新指定ID資料
     public String update(@RequestParam("id") Integer id, Greenwood_Cafe greenwood_cafe) {
+        greenwood_cafeService.findById(id);
+//        greenwood_cafe.setID(greenwood_cafe.getID());
+        greenwood_cafe.setDate(greenwood_cafe.getDate());
+        greenwood_cafe.setTime(greenwood_cafe.getTime());
+        greenwood_cafe.setName(greenwood_cafe.getName());
+        greenwood_cafe.setPhone(greenwood_cafe.getPhone());
+        greenwood_cafe.setPeople(greenwood_cafe.getPeople());
+        greenwood_cafe.setTable_num(greenwood_cafe.getTable_num());
         greenwood_cafeService.save(greenwood_cafe);
         return "更新成功！";
     }
