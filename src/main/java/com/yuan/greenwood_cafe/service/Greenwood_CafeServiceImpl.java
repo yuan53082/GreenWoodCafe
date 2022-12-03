@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @avthor yuan
@@ -34,7 +35,6 @@ public class Greenwood_CafeServiceImpl implements Greenwood_CafeService {
 
     @Override
     public Greenwood_Cafe findById(Integer id) {
-        greenwood_cafeRespository.findById(id);
-        return null;// 不知道如何return資料
+        return greenwood_cafeRespository.findById(id).get();//
     }
 }
