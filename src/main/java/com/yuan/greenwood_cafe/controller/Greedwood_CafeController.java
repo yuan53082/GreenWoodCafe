@@ -22,18 +22,18 @@ public class Greedwood_CafeController {
     /*
     要NEW interface介面，不能NEW impl實作
     @Autowired
-    private Greenwood_CafeService greenwood_cafeService;*/
+    private Greenwood_CafeServiceimpl greenwood_cafeServiceimpl;*/
 
     @PostMapping("/update")// 更新指定ID資料
     public String update(@RequestParam("id") Integer id, Greenwood_Cafe greenwood_cafe) {
-        Greenwood_Cafe data = greenwood_cafeService.findById(id);
-        data.setDate(greenwood_cafe.getDate());
+        Greenwood_Cafe data = greenwood_cafeService.findById(id);// 用變數來裝撈出來的資料
+        data.setDate(greenwood_cafe.getDate());// 把.get資料set進變數中
         data.setTime(greenwood_cafe.getTime());
         data.setName(greenwood_cafe.getName());
         data.setPhone(greenwood_cafe.getPhone());
         data.setPeople(greenwood_cafe.getPeople());
         data.setTable_num(greenwood_cafe.getTable_num());
-        greenwood_cafeService.save(data);
+        greenwood_cafeService.save(data);// 儲存
         return "更新成功！";
     }
 

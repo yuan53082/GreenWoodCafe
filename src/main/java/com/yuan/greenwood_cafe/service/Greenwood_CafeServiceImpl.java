@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @avthor yuan
@@ -15,8 +14,8 @@ import java.util.Optional;
 @Service
 public class Greenwood_CafeServiceImpl implements Greenwood_CafeService {
 
-    @Autowired Greenwood_CafeRespository greenwood_cafeRespository;
-
+    @Autowired
+    Greenwood_CafeRespository greenwood_cafeRespository;
 
     @Override // 刪除指定ID資料
     public void deleteById(Integer id) {
@@ -33,8 +32,8 @@ public class Greenwood_CafeServiceImpl implements Greenwood_CafeService {
         return greenwood_cafeRespository.findAll();
     }
 
-    @Override
+    @Override // 查詢單筆資料
     public Greenwood_Cafe findById(Integer id) {
-        return greenwood_cafeRespository.findById(id).get();//
+        return greenwood_cafeRespository.findById(id).get();// findById後面要.get 原因不知
     }
 }

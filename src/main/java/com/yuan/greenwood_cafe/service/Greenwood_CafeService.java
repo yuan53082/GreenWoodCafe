@@ -15,7 +15,7 @@ public interface Greenwood_CafeService {
 
     Greenwood_Cafe save(Greenwood_Cafe data);// 儲存資料
 
-    List<Greenwood_Cafe> findAll();//查詢所有資料
+    List<Greenwood_Cafe> findAll();// 查詢所有資料
 
-    Greenwood_Cafe findById(Integer id);
+    Greenwood_Cafe findById(Integer id);// 查詢單筆資料
 }
