@@ -24,6 +24,16 @@ public class Greedwood_CafeController {
     @Autowired
     private Greenwood_CafeServiceimpl greenwood_cafeServiceimpl;*/
 
+    @GetMapping("/booking")// 導到booking頁面
+    public ModelAndView booking() {
+        return new ModelAndView("booking");
+    }
+
+    @GetMapping("/manage")// 導到main頁面
+    public ModelAndView manage() {
+        return new ModelAndView("manage");
+    }
+
     @PostMapping("/update")// 更新指定ID資料
     public String update(@RequestParam("id") Integer id, Greenwood_Cafe greenwood_cafe) {
         Greenwood_Cafe data = greenwood_cafeService.findById(id);// 用變數來裝撈出來的資料
@@ -41,11 +51,6 @@ public class Greedwood_CafeController {
     public String delete(@RequestParam("id") Integer id) {
         greenwood_cafeService.deleteById(id);
         return "刪除成功！";
-    }
-
-    @GetMapping("/booking")// 導到booking頁面
-    public ModelAndView add() {
-        return new ModelAndView("booking");
     }
 
     @PostMapping("/save")// 接收前端的資料並調用impl的save進行資料儲存

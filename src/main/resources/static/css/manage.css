@@ -14,7 +14,8 @@ html,body {
 .nav .btnarea {
     top: 100px;
 }
-.nav .btnarea a {
+.nav .btn_area a {
+      margin-top:50px;
       border: 2px solid black;
       background-color: #fff;
       border-radius: 5px;
