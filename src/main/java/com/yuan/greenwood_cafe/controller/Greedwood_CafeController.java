@@ -29,7 +29,7 @@ public class Greedwood_CafeController {
         return new ModelAndView("booking");
     }
 
-    @GetMapping("/manage")// 導到main頁面
+    @GetMapping("/manage")// 導到manage頁面
     public ModelAndView manage() {
         return new ModelAndView("manage");
     }
